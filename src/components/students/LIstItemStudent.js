@@ -4,11 +4,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Context from '../../App';
 
 export default function ListItemStudent({student}) {
-  const { setPage } = React.useContext(Context)
+  const { setPage,setStudentId } = React.useContext(Context)
 
   return (
           <ListItem>
-              <ListItemText onClick={()=>{setPage('studentdetails')}} 
+              <ListItemText onClick={()=>{setPage('studentdetails');setStudentId(student.id)}} 
               sx={{textAlign:'center',cursor:'pointer'}} 
               primary={student.fname+' '+student.lname} />
           </ListItem>

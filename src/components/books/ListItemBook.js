@@ -4,11 +4,11 @@ import ListItemText from '@mui/material/ListItemText';
 import Context from '../../App';
 
 export default function ListItemBook({book}) {
-  const { setPage } = React.useContext(Context)
+  const { setPage,setbookId } = React.useContext(Context)
 
   return (
           <ListItem>
-              <ListItemText onClick={()=>{setPage('bookdetails')}} 
+              <ListItemText onClick={()=>{setPage('bookdetails');setbookId(book.id)}} 
               sx={{textAlign:'center',cursor:'pointer'}} 
               primary={book.name+' by '+book.author} 
               secondary={book.borrowed_by ? ' borrowed by '+

@@ -7,11 +7,11 @@ const Context = React.createContext()
 export const App= () => {
   const [page, setPage] = React.useState('students')
   const [curStudentid, setStudentId] = React.useState(null)
-  const [curbookid, setbookId] = React.useState(null)
+  const [curBookid, setbookId] = React.useState(null)
 
 
   return (
-    <Context.Provider value={{curStudentid,curbookid,setPage,setStudentId,setbookId}} >
+    <Context.Provider value={{curStudentid,curBookid,setPage,setStudentId,setbookId}} >
       <div className="App">
         <Header setPage={setPage} />
         <PageSwitch page={page}/>

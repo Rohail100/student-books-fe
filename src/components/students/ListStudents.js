@@ -5,6 +5,7 @@ import ListItemStudent from './LIstItemStudent'
 
 export default function ListStudents() {
     const [students,setStudents] = React.useState([])
+
     React.useEffect(()=>{
         fetch(`/api/students`,{
             headers : { 
@@ -13,7 +14,7 @@ export default function ListStudents() {
           })
             .then((response) => response.json())
             .then((data) => setStudents(data))
-    },[students])
+    },[])
     return (
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', margin: 'auto' }}
             subheader={

@@ -6,6 +6,7 @@ import ListItemBook from './ListItemBook'
 
 export default function ListBooks() {
     const [books,setBooks] = React.useState([])
+
     React.useEffect(()=>{
         fetch(`/api/books`,{
             headers : { 
@@ -14,9 +15,9 @@ export default function ListBooks() {
           })
             .then((response) => response.json())
             .then((data) => setBooks(data))
-    },[books])
+    },[])
     return (
-        <List sx={{ width: '100%', maxWidth: 1100, bgcolor: 'background.paper', margin: 'auto' }}
+        <List sx={{ width: '100%', maxWidth: 720, bgcolor: 'background.paper', margin: 'auto' }}
             subheader={
                 <ListSubheader component="div">
                     Books
