@@ -2,16 +2,23 @@ import React from 'react';
 import Header from './components/Header';
 import PageSwitch from './components/PageSwitch';
 import './App.css';
+const Context = React.createContext()
 
-function App() {
-  const [page,setPage]=React.useState('students')
+export const App= () => {
+  const [page, setPage] = React.useState('students')
+  const [curStudentid, setStudentId] = React.useState(null)
+  const [curbookid, setbookId] = React.useState(null)
+
 
   return (
-    <div className="App">
-      <Header setPage={setPage}/>
-      <PageSwitch page={page} setPage={setPage}/>
-    </div>
+    <Context.Provider value={{curStudentid,curbookid,setPage,setStudentId,setbookId}} >
+      <div className="App">
+        <Header setPage={setPage} />
+        <PageSwitch page={page}/>
+      </div>
+    </Context.Provider>
+
   );
 }
 
-export default App;
+export default Context;
