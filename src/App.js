@@ -4,12 +4,12 @@ import PageSwitch from './components/PageSwitch';
 import './App.css';
 
 function App() {
-  const [page,setPage]=React.useState('')
+  const [page,setPage]=React.useState('students')
 
   return (
     <div className="App">
       <Header setPage={setPage}/>
-      <PageSwitch page={page}/>
+      <PageSwitch page={page} setPage={setPage}/>
     </div>
   );
 }

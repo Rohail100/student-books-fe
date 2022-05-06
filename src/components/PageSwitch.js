@@ -1,9 +1,13 @@
 import React from 'react'
+import ListBooks from './books/ListBooks';
+import ListStudents from './students/ListStudents';
 
-export default function PageSwitch({page}) {
+export default function PageSwitch({page,setPage}) {
     switch(page) {
         case 'books':
-          return (<h1>Books</h1>);
+          return <ListBooks/>;
+        case 'students':
+            return <ListStudents/>;
         default:
           return (<h1>404</h1>);;
       }
