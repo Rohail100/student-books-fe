@@ -1,4 +1,4 @@
-<h1>Front end of student books application</h1>
+<h1>Frontend of student books application</h1>
 <p>Link to Backend Repo: https://github.com/Rohail100/student-books-bk</p>
 <h2>Follow the instructions to init</h2>
 <p>Clone the Repo</p>
