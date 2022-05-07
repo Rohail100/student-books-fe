@@ -5,7 +5,7 @@ import './App.css';
 const Context = React.createContext()
 
 export const App= () => {
-  const [page, setPage] = React.useState('students')
+  const [page, setPage] = React.useState('books')
   const [curStudentid, setStudentId] = React.useState(null)
   const [curBookid, setbookId] = React.useState(null)
 

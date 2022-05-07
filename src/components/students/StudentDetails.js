@@ -24,6 +24,17 @@ export default function StudentDetails() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    //Validation
+    const hasEmptyFields = Object.values(student).some(
+      (element) => element === ''
+    )
+
+    if (hasEmptyFields) {
+      return console.log("empty")
+    }
+
+    //Call api Update
     const res = await fetch(`/api/students/${curStudentid}`, {
       method: 'PUT',
       headers: {
@@ -50,7 +61,7 @@ export default function StudentDetails() {
       }>
       <form onSubmit={handleSubmit} className='form'>
         <ListItem>
-          <label htmlFor='name'>First Name</label>
+          <label htmlFor='fname'>First Name</label>
           <input
             type='text'
             id='fname'
@@ -61,11 +72,11 @@ export default function StudentDetails() {
           />
         </ListItem>
         <ListItem>
-          <label htmlFor='name'>Last Name</label>
+          <label htmlFor='lname'>Last Name</label>
           <input
             type='text'
-            id='fname'
-            name='fname'
+            id='lname'
+            name='lname'
             value={student.lname}
             onChange={handleInputChange}
             disabled={disabled}
@@ -74,9 +85,9 @@ export default function StudentDetails() {
         <ListItem>
           <input type='submit' value='Update' disabled={disabled}/>
           {disabled ? 
-          <input onClick={()=>{setDisabled(false)}} type='button' value='Enable' />
+          <input onClick={()=>{setDisabled(false)}} type='button' value='Enable Edit' />
           :
-          <input onClick={()=>{setDisabled(true)}} type='button' value='Disable' />
+          <input onClick={()=>{setDisabled(true)}} type='button' value='Disable Edit' />
           }
         </ListItem>
       </form>
